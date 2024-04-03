@@ -1,0 +1,344 @@
+body {
+   
+    font-family: "Urbanist", sans-serif;
+  }
+  a {
+    text-decoration: none;
+    list-style: none;
+    color: #333;
+  }
+  ul li {
+    list-style: none;
+  }
+/**************NAVBAR***************************/
+header{
+    background: linear-gradient(to bottom, rgba(220,226,227,255), #4e888f);
+}
+  nav{
+    text-decoration: none;
+  }
+.logo_nav{
+    width: 200px;
+    height: auto;
+    border-radius: 0 0 10px 0;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.8);
+}
+  
+  .nav_link ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+  }
+  
+  .nav_link ul li {
+    margin-bottom: 10px;
+  }
+  
+  .nav_link ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    
+  }
+  .nav_link ul li a:hover {
+    background: #333;
+    color: #fff;
+    border-radius: 10px;
+  } 
+  .btn_nav {
+    display: none;
+  }
+
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    
+   
+    
+    
+}
+  .sidebar{
+    position:fixed;
+    top:0;
+    right:0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    box-shadow: -10px 0 10px(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    background-color:#4e898f7c;
+     flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 30px;
+    display: none;
+    overflow-y: auto;
+  }
+.sidebar ul li a {
+    text-decoration:none;
+    color: #fff;
+    font-size: 1.2rem;
+    justify-content: space-between;
+    padding-top: 30px;
+    
+} 
+
+
+
+/*****************************EVENEMENT ET INDEX STYLE ******************************/
+.search-bar {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .search-bar input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .search-bar button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4e888f;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+  }
+  
+  .event-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .event-card h3 {
+    margin-top: 0;
+  }
+  
+  .event-card button {
+    padding: 10px 20px;
+    background-color: #4e888f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .event-card button:hover {
+    background-color: #2980b9;
+  }
+
+ /*****************************   FOOTER STYLE ****************************************/  
+
+ .footer {
+    background-color:#dce2e3 ; /* Couleur de fond gris foncé */
+    color: #fff; /* Couleur du texte blanc */
+    padding: 20px 0;
+    text-align: center;
+    
+}
+  
+  .footer__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .opening-hours,
+  .footer__container article {
+    flex: 1 1 20%; /* Chaque colonne prend 20% de l'espace */
+  }
+  
+  .opening-hours h4,
+  .footer__container h4 {
+    color: #fff; /* Couleur du titre blanc */
+  }
+  
+  .opening-hours p {
+    margin-bottom: 10px;
+  }
+  
+  .footer__container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer__container ul li {
+    margin-bottom: 5px;
+  }
+  
+  .footer__container ul li a {
+    color: #fff; /* Couleur des liens blancs */
+    text-decoration: none;
+  }
+  
+  .footer__container ul li a:hover {
+    text-decoration: underline;
+    background: #4e888f;
+  }
+  
+  .footer__copyright {
+    margin-top: 20px;
+  }
+
+  
+/*************************** EVENT PAGE  *********************************************************/
+
+
+.event-details {
+    max-width: 900px;
+    margin: 50px auto;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .event-image {
+    flex: 0 0 40%;
+  }
+  
+  .event-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-info {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-info h1 {
+    font-size: 24px;
+    margin-top: 0;
+  }
+  
+  .event-info p {
+    margin: 10px 0;
+  }
+  
+  .event-info strong {
+    font-weight: bold;
+  }
+  
+  .event-info button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .event-info button:hover {
+    background-color: #2980b9;
+  }
+
+
+/******************************************SIGN IN STYLE***************************************/
+
+.logo {
+    width: 500px;
+    height: auto;
+}
+
+  .signin-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(220,226,227,255), #4e888f);
+  }
+  
+  .signin-form {
+    background: #fff;
+    color: rgba(64,64,64,255);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .signin-form h2 {
+    margin-top: 0;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4e888f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3cb0bd;
+  }
+  
+  .signup-text p {
+    margin-top: 20px;
+  }
+  
+  .signup-text p a {
+    color: #4e888f;
+    text-decoration: none;
+  }
+  
+  .signup-text p a:hover {
+    text-decoration: underline;
+  }
+
+
+
+  /* Styles pour les smartphones */
+@media only screen and (max-width: 600px) {
+
+/*Sign in PAGE*/
+
+    .logo {
+        width: 80%;
+        height: auto;
+    }
+
+  
+    .form-group input {
+      width: calc(100% - 20px);
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  
