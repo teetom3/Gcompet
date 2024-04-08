@@ -5,7 +5,10 @@ body {
   a {
     text-decoration: none;
     list-style: none;
-    color: #333;
+    color: #4e888f;
+  }
+  a:hover{
+    background: #3498db4d;
   }
   ul li {
     list-style: none;
@@ -117,10 +120,13 @@ header{
   }
   
   .event-card {
-    background-color: #fff;
+    background-size: cover;
+  background-position: center;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: rotateCard 2s ease forwards;
+   
   }
   
   .event-card h3 {
@@ -140,6 +146,17 @@ header{
     background-color: #2980b9;
   }
 
+
+  @keyframes rotateCard {
+    from {
+      transform: rotateY(180deg);
+      opacity: 0;
+    }
+    to {
+      transform: rotateY(0deg);
+      opacity: 1;
+    }
+  }
  /*****************************   FOOTER STYLE ****************************************/  
 
  .footer {
@@ -237,7 +254,7 @@ header{
   }
   
   .event-info button {
-    padding: 10px 20px;
+    padding: 10px;
     background-color: #3498db;
     color: #fff;
     border: none;
@@ -447,7 +464,7 @@ header{
 /********* PAGE LISTE DES JOUEURS *******************/ 
 
 .container {
-  max-width: 800px;
+  max-width: 80%;
   margin: 50px auto;
   background-color: #fff;
   border-radius: 5px;
@@ -504,11 +521,131 @@ table img {
 }
 
 
+/****** STYLE EVENT FORM *******/ 
 
 
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
 
+.header {
+  background-color: #4e888f;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
 
+.header h2 {
+  margin-top: 0;
+}
 
+.form-container {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea,
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: #2980b9;
+}
+
+/**** DASHBOARD ***********************/
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.header {
+  background-color: #4e888f;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.event-list {
+  margin-top: 20px;
+}
+
+.event-item {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-info {
+  flex-grow: 1;
+}
+
+.event-info h3 {
+  margin-top: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.actions button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  background-color: #4e888f;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: #58777a;
+}
   /* Styles pour les smartphones */
 @media only screen and (max-width: 600px) {
 
