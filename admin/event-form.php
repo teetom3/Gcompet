@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Gcompet</title>
-
-</head>
+<?php 
+   include 'partials/header.php'
+   ?>
 
 <div class="container">
     <div class="header">
-      <h2>Modification de l'Evenement (Admin)</h2>
-    </div>
-    <div class="alert__message-succes">
-        <p>
-            Modifications sauvgardées
-        </p>
+      <h2>Créer un Événement (Admin)</h2>
     </div>
     <div class="form-container">
       <form>
@@ -50,9 +36,8 @@
           <label for="image">Image de l'Événement (facultatif) :</label>
           <input type="file" id="image" name="image">
         </div>
-        <button type="submit">Sauvegarder</button>
+        <button type="submit">Créer l'Événement</button>
       </form>
-      <button class="quit-button">Quitter</button>
     </div>
   </div>
        <!--------------------------------------------DEBUT DU FOOTER ------------------------------------------------------------>

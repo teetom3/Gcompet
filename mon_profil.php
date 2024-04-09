@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon Profil</title>
-  <link rel="stylesheet" href="./css/styles.css" >
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
+<?php 
+   include 'partials/header.php'
+   ?>
+
+
+
+
+
+
 <body>
     <div class="logo_container">
         <img class="logo"src="./images/logo-transparent-png.png" alt="">
