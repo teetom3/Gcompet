@@ -7,7 +7,7 @@
       <h2>Liste des Joueurs (Admin)</h2>
     </div>
     <div class="search-bar">
-      <input type="text" placeholder="Rechercher un joueur...">
+      <input type="text" id="searchInput"  placeholder="Rechercher un joueur...">
     </div>
     <div class="alert__message-succes">
       <p>
@@ -27,40 +27,46 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><img src="avatar1.jpg" alt="Avatar joueur 1"></td>
-            <td>Doe</td>
-            <td>John</td>
-            <td>john@example.com</td>
-            <td>10</td>
-            <td>
-              <button class="edit-button">Modifier</button>
-              <button class="delete-button">Supprimer</button>
-            </td>
-          </tr>
-          <tr>
-            <td><img src="avatar2.jpg" alt="Avatar joueur 2"></td>
-            <td>Smith</td>
-            <td>Alice</td>
-            <td>alice@example.com</td>
-            <td>15</td>
-            <td>
-              <button class="edit-button">Modifier</button>
-              <button class="delete-button">Supprimer</button>
-            </td>
-          </tr>
-          <tr>
-            <td><img src="avatar3.jpg" alt="Avatar joueur 3"></td>
-            <td>Johnson</td>
-            <td>Michael</td>
-            <td>michael@example.com</td>
-            <td>12</td>
-            <td>
-              <button class="edit-button">Modifier</button>
-              <button class="delete-button">Supprimer</button>
-            </td>
-          </tr>
-          <!-- Ajoutez plus de lignes pour plus de joueurs -->
+         
         </tbody>
       </table>
     </div>
+    <script>
+$(document).ready(function() {
+    // Fonction pour charger tous les joueurs lors du chargement de la page
+    function loadAllPlayers() {
+        $.ajax({
+            url: 'search-players.php', // URL de votre script PHP pour charger tous les joueurs
+            method: 'GET', // Utilisation de la méthode GET pour charger tous les joueurs
+            success: function(response) {
+                // Mettez à jour le contenu du tableau avec tous les joueurs
+                $('tbody').html(response);
+            },
+            error: function(xhr, status, error) {
+                console.error(status + ': ' + error);
+            }
+        });
+    }
+
+    // Appeler la fonction pour charger tous les joueurs au chargement de la page
+    loadAllPlayers();
+
+    // Événement onChange pour la barre de recherche
+    $('#searchInput').on('input', function() {
+        var searchText = $(this).val();
+        $.ajax({
+            url: 'search-players.php', // URL de votre script PHP qui effectue la recherche
+            method: 'POST',
+            data: { searchText: searchText },
+            success: function(response) {
+                // Mettez à jour le contenu du tableau avec les résultats de la recherche
+                $('tbody').html(response);
+            },
+            error: function(xhr, status, error) {
+                console.error(status + ': ' + error);
+            }
+        });
+    });
+});
+
+</script>

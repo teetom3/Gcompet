@@ -1,6 +1,19 @@
 <?php 
-   include 'partials/header.php'
+   include 'partials/header.php';
+
+
+
+   
+   if(isset($_GET['id'])) {
+       $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
+       $query = "SELECT * FROM evenements WHERE id=$id";
+       $query_result = mysqli_query($connection,$query);
+       $evenement = mysqli_fetch_array($query_result);
+        
+   }
    ?>
+
+
       
       
     
@@ -11,13 +24,11 @@
       </div>
     <div class="event-details">
         <div class="event-image">
-          <img src="../images/golf.jpg" alt="Image de l'événement">
+          <img src="../images/events/<?=$evenement['image']?>" alt="Image de l'événement">
         </div>
         <div class="event-info">
-          <h1>Titre de l'événement</h1>
-          <p>Description de l'événement sur plusieurs lignes...</p>
-          <p><strong>Prix:</strong> 50€</p>
-          <p><strong>Places restantes:</strong> 20</p>
+          <h1><?=$evenement['nom']?></h1>
+          <p><?=$evenement['description']?></p>
           <button>S'inscrire</button>
           <button>Recuperer les inscrits</button>
           <button>Inscrire des joueurs</button>

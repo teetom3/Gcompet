@@ -3,7 +3,7 @@ body {
     font-family: "Urbanist", sans-serif;
   }
 
-  .alert__message-succes {
+  .alert__message-success {
     background:#78fa4583;
   }
   .alert__message-error {

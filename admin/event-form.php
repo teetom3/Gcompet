@@ -5,9 +5,17 @@
 <div class="container">
     <div class="header">
       <h2>Créer un Événement (Admin)</h2>
+
+      <?php if(isset($_SESSION['create-event'])): ?> <div class="alert__message-error">
+            <p> 
+                <?= $_SESSION['create-event'];
+                unset($_SESSION['create-event'])?>
+            </p>
+        </div>
+        <?php endif ?>
     </div>
     <div class="form-container">
-      <form>
+      <form action="<?= ROOT_URL ?>admin/create-event-logic.php" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <label for="nom">Nom de l'Événement :</label>
           <input type="text" id="nom" name="nom" required>
@@ -36,7 +44,7 @@
           <label for="image">Image de l'Événement (facultatif) :</label>
           <input type="file" id="image" name="image">
         </div>
-        <button type="submit">Créer l'Événement</button>
+        <button type="submit" name="submit">Créer l'Événement</button>
       </form>
     </div>
   </div>

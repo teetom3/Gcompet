@@ -12,6 +12,7 @@ require '../config/database.php'
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Gcompet</title>
 
 </head>
@@ -30,12 +31,13 @@ require '../config/database.php'
             <li class="hideOnMobile"><a href="<?=ROOT_URL?>logout.php">Déconnexion</a></li>
             <li class="open_nav"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M130-248v-75h700v75H130Zm0-195v-75h700v75H130Zm0-195v-75h700v75H130Z"/></svg></a></li>
           </ul>
+          <?php if(isset($_SESSION['admin'])):?>
             <ul class="admin_nav">
             <li class="hideOnMobile"><a href="<?=ROOT_URL?>admin/dashboard.php">Dashboard</a></li>
             <li class="hideOnMobile"><a href="<?=ROOT_URL?>admin/event-form.php">Créer un Evenement</a></li>
             <li class="hideOnMobile"><a href="<?=ROOT_URL?>admin/manage-utilisateurs.php">Liste des Joueurs</a></li>
             </ul>
-
+            <?php endif?>
         </nav>
         <nav class="sidebar">
           <ul>
@@ -44,6 +46,11 @@ require '../config/database.php'
             <li><a href="<?=ROOT_URL?>event.php">Événement</a></li>
             <li><a href="<?=ROOT_URL?>liste_joueurs.php">Liste des Joueurs</a></li>
             <li><a href="<?=ROOT_URL?>mon_profil.php">Mon Profile</a></li>
+            <?php if(isset($_SESSION['admin'])):?>
+            <li ><a href="<?=ROOT_URL?>admin/dashboard.php">Dashboard</a></li>
+            <li ><a href="<?=ROOT_URL?>admin/event-form.php">Créer un Evenement</a></li>
+            <li ><a href="<?=ROOT_URL?>admin/manage-utilisateurs.php">Liste des Joueurs</a></li>
+            <?php endif?>
             <li><a href="<?=ROOT_URL?>logout.php">Déconnexion</a></li>
           </ul>
         </nav>
