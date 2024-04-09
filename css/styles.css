@@ -2,6 +2,13 @@ body {
    
     font-family: "Urbanist", sans-serif;
   }
+
+  .alert__message-succes {
+    background:#78fa4583;
+  }
+  .alert__message-error {
+    background: #f01212d5;
+  }
   a {
     text-decoration: none;
     list-style: none;
@@ -48,19 +55,11 @@ header{
     color: #fff;
     border-radius: 10px;
   } 
-  .btn_nav {
+  .open_nav {
     display: none;
   }
 
-.sidebar ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    
-   
-    
-    
-}
+
   .sidebar{
     position:fixed;
     top:0;
@@ -72,20 +71,20 @@ header{
     backdrop-filter: blur(10px);
     background-color:#4e898f7c;
      flex-direction: column;
-    align-items: flex-start;
     justify-content: flex-start;
-    padding-top: 30px;
     display: none;
     overflow-y: auto;
   }
-.sidebar ul li a {
-    text-decoration:none;
-    color: #fff;
+.sidebar ul li  {
+   padding: 20px;
     font-size: 1.2rem;
-    justify-content: space-between;
-    padding-top: 30px;
+    
+    
     
 } 
+.sidebar ul li a {
+  color: #dce2e3;
+}
 
 
 
@@ -564,7 +563,7 @@ table img {
 .form-group input[type="date"],
 .form-group input[type="number"],
 .form-group input[type="file"] {
-  width: 100%;
+  width: 80%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -646,6 +645,19 @@ table img {
 .actions button:hover {
   background-color: #58777a;
 }
+
+
+@media screen and (max-width: 1024px) {
+  /* NAV BAR */
+  .open_nav {
+    display: block;
+  }
+.hideOnMobile{
+  display: none;
+}
+  
+}
+
   /* Styles pour les smartphones */
 @media only screen and (max-width: 600px) {
 
@@ -663,6 +675,12 @@ table img {
   
     button {
       width: 100%;
+    }
+
+
+    /**** INDEX PAGE ***/
+    .event-grid {
+      grid-template-columns: repeat(1, 1fr); /* Une seule colonne sur les écrans plus petits */
     }
   }
   

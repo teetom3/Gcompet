@@ -3,64 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Liste des Joueurs (Admin)</title>
-  <link rel="stylesheet" href="/styles.css">
+  <title>Mon Profil</title>
+  <link rel="stylesheet" href="../css/styles.css" >
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h2>Liste des Joueurs (Admin)</h2>
+    <div class="logo_container">
+        <img class="logo"src="./images/logo-transparent-png.png" alt="">
     </div>
-    <div class="search-bar">
-      <input type="text" placeholder="Rechercher un joueur...">
+  <div class="profile-container">
+    <div class="profile-form">
+      <h2>Modifications des utilisateurs</h2>
+      <div class="alert__message-succes">
+        <p>
+            Modifications sauvgardées
+        </p>
     </div>
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Avatar</th>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Email</th>
-            <th>Index</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><img src="avatar1.jpg" alt="Avatar joueur 1"></td>
-            <td>Doe</td>
-            <td>John</td>
-            <td>john@example.com</td>
-            <td>10</td>
-            <td>
-              <button class="edit-button">Modifier</button>
-              <button class="delete-button">Supprimer</button>
-            </td>
-          </tr>
-          <tr>
-            <td><img src="avatar2.jpg" alt="Avatar joueur 2"></td>
-            <td>Smith</td>
-            <td>Alice</td>
-            <td>alice@example.com</td>
-            <td>15</td>
-            <td>
-              <button class="edit-button">Modifier</button>
-              <button class="delete-button">Supprimer</button>
-            </td>
-          </tr>
-          <tr>
-            <td><img src="avatar3.jpg" alt="Avatar joueur 3"></td>
-            <td>Johnson</td>
-            <td>Michael</td>
-            <td>michael@example.com</td>
-            <td>12</td>
-            <td>
-              <button class="edit-button">Modifier</button>
-              <button class="delete-button">Supprimer</button>
-            </td>
-          </tr>
-          <!-- Ajoutez plus de lignes pour plus de joueurs -->
-        </tbody>
-      </table>
+      <form>
+        <div class="form-group">
+          <label for="nom">Nom :</label>
+          <input type="text" id="nom" name="nom" required>
+        </div>
+        <div class="form-group">
+          <label for="prenom">Prénom :</label>
+          <input type="text" id="prenom" name="prenom" required>
+        </div>
+        <div class="form-group">
+          <label for="date_naissance">Date de naissance :</label>
+          <input type="date" id="date_naissance" name="date_naissance" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="telephone">Numéro de téléphone :</label>
+          <input type="tel" id="telephone" name="telephone" required>
+        </div>
+        <div class="form-group">
+          <label for="adresse">Adresse :</label>
+          <input type="text" id="adresse" name="adresse" required>
+        </div>
+        <div class="form-group">
+          <label for="num_licence">Numéro de licence de FFGOLF :</label>
+          <input type="text" id="num_licence" name="num_licence" required>
+        </div>
+        <div class="form-group">
+          <label for="index">Index (Classement Golf) :</label>
+          <input type="text" id="index" name="index" required>
+        </div>
+    
+        <button type="submit">Sauvegarder</button>
+      </form>
+      <button class="quit-button">Quitter</button>
     </div>
+  </div>
+</body>
+</html>
