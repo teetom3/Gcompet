@@ -1,6 +1,12 @@
 
 <?php 
-   include 'partials/header.php'
+   include 'partials/header.php' ;
+
+    $query = "SELECT * FROM evenements WHERE is_active=1";
+    $evenements = mysqli_query($connection,$query);
+    
+     
+
    ?>
 
  
@@ -13,79 +19,15 @@
         <button type="button">Rechercher</button>
       </div>
       <div class="event-grid">
-        <div class="event-card" style="background-image: url('./images/golf.jpg');">
-          <h3>Titre de l'événement</h3>
-          <p>Catégorie: Cours de Golf</p>
-          <p>Places restantes: 10</p>
-          <button>En savoir plus</button>
+        <?php while($evenement = mysqli_fetch_assoc($evenements)) : ?>
+          <div class="event-card" style="background-image: url('./images/events/<?php echo $evenement['image'] ?>');">
+          <h3><?=$evenement['nom'] ?></h3>
+          <p><?=$evenement['categorie']?></p>
+          <p>Places restantes: <?=$evenement['places_disponibles']?></p>
+          <a href="<?=ROOT_URL?>event.php?id=<?= $evenement['id']?>"><button>En savoir plus</button></a>
         </div>
-
-        <div class="event-card">
-            <h3>Titre de l'événement</h3>
-            <p>Catégorie: Cours de Golf</p>
-            <p>Places restantes: 10</p>
-            <button>En savoir plus</button>
-          </div>
-          <div class="event-card">
-            <h3>Titre de l'événement</h3>
-            <p>Catégorie: Cours de Golf</p>
-            <p>Places restantes: 10</p>
-            <button>En savoir plus</button>
-          </div>
-          <div class="event-card">
-            <h3>Titre de l'événement</h3>
-            <p>Catégorie: Cours de Golf</p>
-            <p>Places restantes: 10</p>
-            <button>En savoir plus</button>
-          </div>
-          <div class="event-card">
-            <h3>Titre de l'événement</h3>
-            <p>Catégorie: Cours de Golf</p>
-            <p>Places restantes: 10</p>
-            <button>En savoir plus</button>
-          </div>
-          <div class="event-card">
-            <h3>Titre de l'événement</h3>
-            <p>Catégorie: Cours de Golf</p>
-            <p>Places restantes: 10</p>
-            <button>En savoir plus</button>
-          </div>
-          <div class="event-card">
-            <h3>Titre de l'événement</h3>
-            <p>Catégorie: Cours de Golf</p>
-            <p>Places restantes: 10</p>
-            <button>En savoir plus</button>
-          </div>
-          <div class="event-card">
-            <h3>Titre de l'événement</h3>
-            <p>Catégorie: Cours de Golf</p>
-            <p>Places restantes: 10</p>
-            <button>En savoir plus</button>
-          </div>
-          <div class="event-card">
-            <h3>Titre de l'événement</h3>
-            <p>Catégorie: Cours de Golf</p>
-            <p>Places restantes: 10</p>
-            <button>En savoir plus</button>
-          </div>
-          <div class="event-card">
-            <h3>Titre de l'événement</h3>
-            <p>Catégorie: Cours de Golf</p>
-            <p>Places restantes: 10</p>
-            <button>En savoir plus</button>
-          </div>
-          <div class="event-card">
-            <h3>Titre de l'événement</h3>
-            <p>Catégorie: Cours de Golf</p>
-            <p>Places restantes: 10</p>
-            <button>En savoir plus</button>
-          </div>
-          <div class="event-card">
-            <h3>Titre de l'événement</h3>
-            <p>Catégorie: Cours de Golf</p>
-            <p>Places restantes: 10</p>
-            <button>En savoir plus</button>
-          </div>
+          <?php endwhile ?>
+       
         <!-- Répéter pour 8 autres cartes d'événements -->
       </div>
 

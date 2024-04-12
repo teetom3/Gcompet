@@ -64,9 +64,9 @@ if (isset($_POST['searchText'])) {
                 echo '<td>' . $row['index_golf'] . '</td>';
                 echo '<td>';
                 // Bouton Modifier avec l'ID du joueur
-                echo '<a href="edit-player.php?id=' . $row['id'] . '" class="edit-button">Modifier</a>';
+                echo '<a href="edit-player.php?id=' . $row['id'] . '" class="edit-button"><button class="edit-button">Modifier</button></a>';
                 // Bouton Supprimer avec l'ID du joueur
-                echo '<a href="delete-player.php?id=' . $row['id'] . '" class="delete-button">Supprimer</a>';
+                echo '<a href="delete-player.php?id=' . $row['id'] . '" class="delete-button"><button class="delete-button">Supprimer</button></a>';
                 echo '</td>';
                 echo '</tr>';
             }
