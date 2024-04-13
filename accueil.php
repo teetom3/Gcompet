@@ -24,7 +24,7 @@
           <h3><?=$evenement['nom'] ?></h3>
           <p><?=$evenement['categorie']?></p>
           <p>Places restantes: <?=$evenement['places_disponibles']?></p>
-          <a href="<?=ROOT_URL?>event.php?id=<?= $evenement['id']?>"><button>En savoir plus</button></a>
+          <a href="<?=ROOT_URL?>event.php?id_evenement=<?= $evenement['id']?>"><button>En savoir plus</button></a>
         </div>
           <?php endwhile ?>
        

@@ -9,7 +9,7 @@ if(isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
 
     // Récupérer l'ID de l'événement à partir du formulaire (à adapter selon votre formulaire)
-    $event_id = $_GET['id'];
+    $event_id = $_GET['id_evenement'];
 
     // Vérifier si l'utilisateur est déjà inscrit à l'événement
     $check_query = "SELECT * FROM inscriptions WHERE id_utilisateur = $user_id AND id_evenement = $event_id";
@@ -55,6 +55,6 @@ if(isset($_SESSION['user_id'])) {
 }
 
 // Rediriger vers la page précédente en cas d'erreur ou de succès
-header('Location: ' . ROOT_URL .'event.php?id=' . $event_id);
+header('Location: ' . ROOT_URL .'event.php?id_evenement=' . $event_id);
 exit();
 ?>

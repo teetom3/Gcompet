@@ -31,6 +31,20 @@
                 unset($_SESSION['inscription_error'])?>
             </p>
         </div>
+        <?php elseif(isset($_SESSION['desinscription_success'])): ?> 
+        <div class="alert__message-success">
+            <p> 
+                <?= $_SESSION['desinscription_success'];
+                unset($_SESSION['desinscription_success'])?>
+            </p>
+        </div>
+        <?php elseif(isset($_SESSION['desinscription_error'])): ?> 
+        <div class="alert__message-error">
+            <p> 
+                <?= $_SESSION['desinscription_error'];
+                unset($_SESSION['desinscription_error'])?>
+            </p>
+        </div>
         <?php endif ?>
     <div class="event-details">
         <div class="event-image">
@@ -47,7 +61,7 @@
 
       <?php 
 
-$query = "SELECT users.avatar, users.prenom, users.index_golf FROM inscriptions 
+$query = "SELECT users.id AS id_utilisateur, users.avatar, users.prenom, users.index_golf FROM inscriptions 
 INNER JOIN users ON inscriptions.id_utilisateur = users.id
 WHERE inscriptions.id_evenement = $id_evenement";
 
@@ -79,7 +93,7 @@ $result = mysqli_query($connection, $query);
                 <td><img src="../images/<?php echo $user_inscrit['avatar'] ?>" alt="Avatar joueur 1"></td>
                 <td><?=$user_inscrit['prenom']?></td>
                 <td><?=$user_inscrit['index_golf']?></td>
-                <td><a><button>ANNULER</button></a></td>
+                <td><a href="<?=ROOT_URL?>admin/desinscrire-joueurs-logic.php?id_evenement=<?=$id_evenement?>&id_utilisateur=<?=$user_inscrit['id_utilisateur']?>"><button>ANNULER</button></a></td>
               </tr>
               <?php endwhile?>
              
