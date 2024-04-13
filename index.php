@@ -20,7 +20,7 @@ require './config/database.php';
         <div class="signin-form">
           <h2>Connexion</h2>
           <?php if(isset($_SESSION['signup-success'])):?>
-            <div class="alert__message-succes">
+            <div class="alert__message-success">
             <p>
                 <?=$_SESSION['signup-success'] ;
                 unset($_SESSION['signup-success'])?>

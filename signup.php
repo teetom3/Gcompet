@@ -6,6 +6,7 @@ require './config/database.php';
 $nom = $_SESSION['signup-data']['nom'] ?? null;
 $prenom = $_SESSION['signup-data']['prenom'] ?? null;
 $date_de_naissance = $_SESSION['signup-data']['date_de_naissance']?? null;
+$email = $_SESSION['signup-data']['email']?? null;
 $telephone = $_SESSION['signup-data']['telephone']?? null;
 $adresse = $_SESSION['signup-data']['adresse']?? null;
 $numero_licence = $_SESSION['signup-data']['numero_licence']?? null;

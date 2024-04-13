@@ -21,11 +21,21 @@ $result = mysqli_query($connection, $query);
     <div class="search-bar">
       <input type="text" placeholder="Rechercher un joueur...">
     </div>
-    <div class="alert__message-succes">
-      <p>
-          Modifications sauvgardées
-      </p>
-  </div>
+    <?php if(isset($_SESSION['inscription_success'])): ?> 
+        <div class="alert__message-success">
+            <p> 
+                <?= $_SESSION['inscription_success'];
+                unset($_SESSION['inscription_success'])?>
+            </p>
+        </div>
+        <?php elseif(isset($_SESSION['inscription_error'])): ?> 
+        <div class="alert__message-error">
+            <p> 
+                <?= $_SESSION['inscription_error'];
+                unset($_SESSION['inscription_error'])?>
+            </p>
+        </div>
+        <?php endif ?>
     <div class="table-container">
       <table>
         <thead>
@@ -41,13 +51,13 @@ $result = mysqli_query($connection, $query);
         <tbody>
           <?php while($user_none = mysqli_fetch_assoc($result)) :?>
           <tr>
-            <td><img src="avatar1.jpg" alt="Avatar joueur 1"></td>
-            <td>Doe</td>
-            <td>John</td>
-            <td>john@example.com</td>
-            <td>10</td>
+            <td><img src="../images/<?php echo $user_none['avatar'] ?>" alt="Avatar joueur 1"></td>
+            <td><?=$user_none['nom']?></td>
+            <td><?=$user_none['prenom']?></td>
+            <td><?=$user_none['email']?></td>
+            <td><?=$user_none['index_golf']?></td>
             <td>
-                <button class="inscription-button">Inscrire</button>
+                <a href="<?=ROOT_URL?>admin/inscrire-joueurs-logic.php?id_evenement=<?=$id_evenement?>&id_utilisateur=<?=$user_none['id']?>"><button class="inscription-button">Inscrire</button></a>
             </td>
           </tr>
           <?php endwhile?>
