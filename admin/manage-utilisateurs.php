@@ -9,11 +9,7 @@
     <div class="search-bar">
       <input type="text" id="searchInput"  placeholder="Rechercher un joueur...">
     </div>
-    <div class="alert__message-succes">
-      <p>
-          Modifications sauvgardées
-      </p>
-  </div>
+   
     <div class="table-container">
       <table>
         <thead>
