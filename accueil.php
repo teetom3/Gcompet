@@ -20,7 +20,7 @@
       </div>
       <div class="event-grid">
         <?php while($evenement = mysqli_fetch_assoc($evenements)) : ?>
-          <div class="event-card" style="background-image: url('./images/events/<?php echo $evenement['image'] ?>');">
+          <div class="event-card" style="background-image: url('./images/events/<?php echo $evenement['image'] ?>'); filter: brightness(120%);">
           <h3><?=$evenement['nom'] ?></h3>
           <p><?=$evenement['categorie']?></p>
           <p>Places restantes: <?=$evenement['places_disponibles']?></p>

@@ -81,5 +81,6 @@
       <button class="quit-button">Quitter</button>
     </div>
   </div>
-</body>
-</html>
+  <?php
+  include 'partials/footer.php';
+  ?>

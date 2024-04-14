@@ -66,5 +66,8 @@ $result = mysqli_query($connection, $query);
         </tbody>
       </table>
     </div>
+    <?php
+  include 'partials/footer.php';
+  ?>
 
     
