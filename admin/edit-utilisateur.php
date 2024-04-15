@@ -20,9 +20,7 @@
 
    ?>
 <body>
-    <div class="logo_container">
-        <img class="logo"src="./images/logo-transparent-png.png" alt="">
-    </div>
+<a  href="delete-player.php?id_utilisateur=<?=$_GET['id_utilisateur']?>"class=><button class="supprimer_button">Supprimer l'utilisateur</button></a>
   <div class="profile-container">
     <div class="profile-form">
       <h2>Modifications des utilisateurs</h2>
@@ -38,6 +36,20 @@
             <p> 
                 <?= $_SESSION['modification_error'];
                 unset($_SESSION['modification_error'])?>
+            </p>
+        </div>
+        <?php elseif(isset($_SESSION['success_message'])): ?> 
+        <div class="alert__message-success">
+            <p> 
+                <?= $_SESSION['success_message'];
+                unset($_SESSION['success_message'])?>
+            </p>
+        </div>
+        <?php elseif(isset($_SESSION['error_message'])): ?> 
+        <div class="alert__message-error">
+            <p> 
+                <?= $_SESSION['error_message'];
+                unset($_SESSION['error_message'])?>
             </p>
         </div>
         <?php endif?>
@@ -78,8 +90,10 @@
     
         <button type="submit" name="submit">Sauvegarder</button>
       </form>
-      <button class="quit-button">Quitter</button>
+      <a href="<?=ROOT_URL?>admin/manage-utilisateurs.php"><button class="quit-button">Quitter</button></a>
     </div>
+    
+                
   </div>
   <?php
   include 'partials/footer.php';

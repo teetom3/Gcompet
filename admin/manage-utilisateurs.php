@@ -27,6 +27,7 @@
         </tbody>
       </table>
     </div>
+
     <script>
 $(document).ready(function() {
     // Fonction pour charger tous les joueurs lors du chargement de la page
@@ -66,4 +67,7 @@ $(document).ready(function() {
 });
 
 </script>
-
+</div>
+<?php
+  include 'partials/footer.php';
+  ?>

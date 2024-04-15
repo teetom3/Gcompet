@@ -12,6 +12,7 @@ require './config/database.php';
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Gcompet</title>
 
 </head>
@@ -24,7 +25,7 @@ require './config/database.php';
         <nav class="nav_link">
           <ul>
             <li class="hideOnMobile"><a href="<?=ROOT_URL?>accueil.php">Accueil</a></li>
-            <li class="hideOnMobile"><a href="<?=ROOT_URL?>event.php">Événement</a></li>
+            
             <li class="hideOnMobile"><a href="<?=ROOT_URL?>liste_joueurs.php">Liste des Joueurs</a></li>
             <li class="hideOnMobile"><a href="<?=ROOT_URL?>mon_profil.php">Mon Profile</a></li>
             <li class="hideOnMobile"><a href="<?=ROOT_URL?>logout.php">Déconnexion</a></li>
@@ -44,7 +45,7 @@ require './config/database.php';
           <ul>
             <li class="close_nav"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m259-206-52-53 220-221-220-221 52-53 221 221 221-221 52 53-220 221 220 221-52 53-221-221-221 221Z"/></svg></a></li>
             <li><a href="<?=ROOT_URL?>accueil.php">Accueil</a></li>
-            <li><a href="<?=ROOT_URL?>event.php">Événement</a></li>
+            
             <li><a href="<?=ROOT_URL?>liste_joueurs.php">Liste des Joueurs</a></li>
             <li><a href="<?=ROOT_URL?>mon_profil.php">Mon Profile</a></li>
             <?php if(isset($_SESSION['admin'])):?>

@@ -8,7 +8,7 @@
       <h2>Liste des Joueurs</h2>
     </div>
     <div class="search-bar">
-      <input type="text" placeholder="Rechercher un joueur...">
+      <input type="text" id="searchInput"  placeholder="Rechercher un joueur...">
     </div>
     <div class="table-container">
       <table>
@@ -20,26 +20,51 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><img src="" alt="Avatar joueur 1"></td>
-            <td>John</td>
-            <td>10</td>
-          </tr>
-          <tr>
-            <td><img src="./images/P1000050.JPG" alt="Avatar joueur 2"></td>
-            <td>Alice</td>
-            <td>15</td>
-          </tr>
-          <tr>
-            <td><img src="avatar3.jpg" alt="Avatar joueur 3"></td>
-            <td>Michael</td>
-            <td>12</td>
-          </tr>
+          
           <!-- Ajoutez plus de lignes pour plus de joueurs -->
         </tbody>
       </table>
     </div>
 </div>
+<script>
+$(document).ready(function() {
+    // Fonction pour charger tous les joueurs lors du chargement de la page
+    function loadAllPlayers() {
+        $.ajax({
+            url: 'search-players.php', // URL de votre script PHP pour charger tous les joueurs
+            method: 'GET', // Utilisation de la méthode GET pour charger tous les joueurs
+            success: function(response) {
+                // Mettez à jour le contenu du tableau avec tous les joueurs
+                $('tbody').html(response);
+            },
+            error: function(xhr, status, error) {
+                console.error(status + ': ' + error);
+            }
+        });
+    }
+
+    // Appeler la fonction pour charger tous les joueurs au chargement de la page
+    loadAllPlayers();
+
+    // Événement onChange pour la barre de recherche
+    $('#searchInput').on('input', function() {
+        var searchText = $(this).val();
+        $.ajax({
+            url: 'search-players.php', // URL de votre script PHP qui effectue la recherche
+            method: 'POST',
+            data: { searchText: searchText },
+            success: function(response) {
+                // Mettez à jour le contenu du tableau avec les résultats de la recherche
+                $('tbody').html(response);
+            },
+            error: function(xhr, status, error) {
+                console.error(status + ': ' + error);
+            }
+        });
+    });
+});
+
+</script>
     <!--------------------------------------------DEBUT DU FOOTER ------------------------------------------------------------>
     <?php 
    include 'partials/footer.php'

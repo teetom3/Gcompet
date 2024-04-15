@@ -22,17 +22,15 @@ if (isset($_POST['searchText'])) {
             while ($row = mysqli_fetch_assoc($result)) {
                 // Construire une ligne de tableau pour chaque joueur
                 echo '<tr>';
-                echo '<td><img src="../images/' . $row['avatar'] . '" alt="Avatar joueur"></td>';
-                echo '<td>' . $row['nom'] . '</td>';
-                echo '<td>' . $row['prenom'] . '</td>';
-                echo '<td>' . $row['email'] . '</td>';
-                echo '<td>' . $row['index_golf'] . '</td>';
-                echo '<td>';
-                // Bouton Modifier avec l'ID du joueur
-                echo '<a href="edit-utilisateur.php?id=' . $row['id'] . '" class="edit-button"><button class="edit-button">Modifier</button></a>';
-                // Bouton Supprimer avec l'ID du joueur
+                echo '<td><img src="./images/' . $row['avatar'] . '" alt="Avatar joueur"></td>';
                 
-                echo '</td>';
+                echo '<td>' . $row['prenom'] . '</td>';
+                
+                echo '<td>' . $row['index_golf'] . '</td>';
+                
+                
+                
+                
                 echo '</tr>';
                 
             }
@@ -58,16 +56,14 @@ if (isset($_POST['searchText'])) {
             while ($row = mysqli_fetch_assoc($result)) {
                 // Construire une ligne de tableau pour chaque joueur
                 echo '<tr>';
-                echo '<td><img src="../images/' . $row['avatar'] . '" alt="Avatar joueur"></td>';
-                echo '<td>' . $row['nom'] . '</td>';
-                echo '<td>' . $row['prenom'] . '</td>';
-                echo '<td>' . $row['email'] . '</td>';
-                echo '<td>' . $row['index_golf'] . '</td>';
-                echo '<td>';
-                // Bouton Modifier avec l'ID du joueur
-                echo '<a href="edit-utilisateur.php?id_utilisateur=' . $row['id'] . '" class="edit-button"><button class="edit-button">Modifier</button></a>';
+                echo '<td><img src="./images/' . $row['avatar'] . '" alt="Avatar joueur"></td>';
                 
-                echo '</td>';
+                echo '<td>' . $row['prenom'] . '</td>';
+                
+                echo '<td>' . $row['index_golf'] . '</td>';
+                
+               
+               
                 echo '</tr>';
             }
         } else {

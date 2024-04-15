@@ -20,6 +20,20 @@ $evenements = mysqli_query($connection, $query);
                 unset($_SESSION['create-event-success'])?>
             </p>
         </div>
+        <?php elseif(isset($_SESSION['success_message'])): ?> 
+        <div class="alert__message-success">
+            <p> 
+                <?= $_SESSION['success_message'];
+                unset($_SESSION['success_message'])?>
+            </p>
+        </div>
+        <?php elseif(isset($_SESSION['error_message'])): ?> 
+        <div class="alert__message-error">
+            <p> 
+                <?= $_SESSION['error_message'];
+                unset($_SESSION['error_message'])?>
+            </p>
+        </div>
         <?php endif ?>
 <div class="container">
     <div class="header">

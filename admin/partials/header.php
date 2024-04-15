@@ -25,7 +25,7 @@ require '../config/database.php'
         <nav class="nav_link">
           <ul>
             <li class="hideOnMobile"><a href="<?=ROOT_URL?>accueil.php">Accueil</a></li>
-            <li class="hideOnMobile"><a href="<?=ROOT_URL?>event.php">Événement</a></li>
+            
             <li class="hideOnMobile"><a href="<?=ROOT_URL?>liste_joueurs.php">Liste des Joueurs</a></li>
             <li class="hideOnMobile"><a href="<?=ROOT_URL?>mon_profil.php">Mon Profile</a></li>
             <li class="hideOnMobile"><a href="<?=ROOT_URL?>logout.php">Déconnexion</a></li>
@@ -43,7 +43,7 @@ require '../config/database.php'
           <ul>
             <li class="close_nav"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m259-206-52-53 220-221-220-221 52-53 221 221 221-221 52 53-220 221 220 221-52 53-221-221-221 221Z"/></svg></a></li>
             <li><a href="<?=ROOT_URL?>accueil.php">Accueil</a></li>
-            <li><a href="<?=ROOT_URL?>event.php">Événement</a></li>
+            
             <li><a href="<?=ROOT_URL?>liste_joueurs.php">Liste des Joueurs</a></li>
             <li><a href="<?=ROOT_URL?>mon_profil.php">Mon Profile</a></li>
             <?php if(isset($_SESSION['admin'])):?>

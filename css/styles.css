@@ -522,11 +522,19 @@ table img {
   height: 50px;
   border-radius: 50%;
 }
-
-.delete-button {
-  margin-left: 10px;
+.supprimer_button{
   padding: 8px 12px;
-  background-color: #4e888f;
+  background-color: #d41010;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+
+}
+.delete-button {
+
+  padding: 8px 12px;
+  background-color: #d41010;
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -669,6 +677,7 @@ table img {
 }
 
 
+
 @media screen and (max-width: 1024px) {
   /* NAV BAR */
   .open_nav {
@@ -681,7 +690,17 @@ table img {
 }
 
   /* Styles pour les smartphones */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  th, td {
+    display: inline-block;
+  
+}
 
 /*Sign in PAGE*/
 

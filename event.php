@@ -70,9 +70,7 @@ $result = mysqli_query($connection, $query);
         <div class="header">
           <h2>Liste des Joueurs inscrits</h2>
         </div>
-        <div class="search-bar">
-          <input type="text" placeholder="Rechercher un joueur...">
-        </div>
+       
         <div class="table-container">
           <table>
             <thead>
