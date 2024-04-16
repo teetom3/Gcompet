@@ -56,6 +56,7 @@
           <a href="<?=ROOT_URL?>admin/inscrire-logic-admin.php?id=<?= $evenement['id']?>"><button>S'inscrire</button></a>
           <button>Recuperer les inscrits</button>
           <a href="<?=ROOT_URL?>admin/inscrire-joueurs.php?id=<?= $evenement['id']?>"><button>Inscrire des joueurs</button></a>
+          <a href="<?=ROOT_URL?>admin/edit-event.php?id=<?= $evenement['id']?>"><button>Modifier</button></a>
         </div>
       </div>
 
