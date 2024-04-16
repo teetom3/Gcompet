@@ -56,7 +56,7 @@ while ($row = mysqli_fetch_assoc($resultat)) {
 }
 
 // Chemin et nom du fichier texte
-$nom_fichier = 'liste_licences.txt';
+$nom_fichier = 'liste_licences_' . date('Y-m-d_H-i-s') . '.txt';
 $chemin_complet = '../images/fichier/' . $nom_fichier; // Remplacer avec le chemin approprié
 
 // Envoyer l'e-mail avec le fichier texte en pièce jointe
