@@ -45,6 +45,20 @@
                 unset($_SESSION['desinscription_error'])?>
             </p>
         </div>
+        <?php elseif(isset($_SESSION['message'])): ?> 
+        <div class="alert__message-success">
+            <p> 
+                <?= $_SESSION['message'];
+                unset($_SESSION['message'])?>
+            </p>
+        </div>
+        <?php elseif(isset($_SESSION['error'])): ?> 
+        <div class="alert__message-error">
+            <p> 
+                <?= $_SESSION['error'];
+                unset($_SESSION['error'])?>
+            </p>
+        </div>
         <?php endif ?>
     <div class="event-details">
         <div class="event-image">
@@ -54,7 +68,7 @@
           <h1><?=$evenement['nom']?></h1>
           <p><?=$evenement['description']?></p>
           <a href="<?=ROOT_URL?>admin/inscrire-logic-admin.php?id=<?= $evenement['id']?>"><button>S'inscrire</button></a>
-          <button>Recuperer les inscrits</button>
+          <a href="<?=ROOT_URL?>admin/recuperer-liste-mail.php?id=<?= $evenement['id']?>"><button>Recuperer les inscrits</button></a>
           <a href="<?=ROOT_URL?>admin/inscrire-joueurs.php?id=<?= $evenement['id']?>"><button>Inscrire des joueurs</button></a>
           <a href="<?=ROOT_URL?>admin/edit-event.php?id=<?= $evenement['id']?>"><button>Modifier</button></a>
         </div>
