@@ -10,7 +10,7 @@ if(isset($_GET['id'])) {
     $id_event = $_GET['id'];
 
     // Requête SQL pour mettre à jour le statut de l'événement en is_active = 0
-    $query = "UPDATE events SET is_active = 0 WHERE id = $id_event";
+    $query = "UPDATE evenements SET is_active = 0 WHERE id = $id_event";
 
     // Exécuter la requête
     $result = mysqli_query($connection, $query);
@@ -19,18 +19,18 @@ if(isset($_GET['id'])) {
     if($result) {
         // Redirection vers une page de succès ou d'accueil
         $_SESSION['success_message'] = "L'événement a été désactivé avec succès.";
-        header("Location: index.php");
+        header('Location: ' . ROOT_URL . 'admin/dashboard.php');
         exit();
     } else {
         // En cas d'échec de la mise à jour
         $_SESSION['error_message'] = "Une erreur s'est produite lors de la désactivation de l'événement.";
-        header("Location: index.php");
+        header('Location: ' . ROOT_URL . 'admin/dashboard.php');
         exit();
     }
 } else {
     // Redirection si l'ID de l'événement n'est pas spécifié dans l'URL
     $_SESSION['error_message'] = "L'identifiant de l'événement n'a pas été spécifié.";
-    header("Location: index.php");
+    header('Location: ' . ROOT_URL . 'admin/dashboard.php');
     exit();
 }
 

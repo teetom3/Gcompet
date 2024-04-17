@@ -23,31 +23,30 @@ if (isset($_POST['searchText'])) {
                 // Construire une ligne de tableau pour chaque joueur
                 echo '<tr>';
                 echo '<td><img src="./images/' . $row['avatar'] . '" alt="Avatar joueur"></td>';
-                
                 echo '<td>' . $row['prenom'] . '</td>';
-                
                 echo '<td>' . $row['index_golf'] . '</td>';
-                
-                
-                
-                
                 echo '</tr>';
-                
             }
         } else {
             // Si aucun résultat n'est trouvé, afficher un message approprié
-            echo '<tr><td colspan="6">Aucun joueur trouvé</td></tr>';
+            echo '<tr><td colspan="3">Aucun joueur trouvé</td></tr>';
         }
     } else {
         // En cas d'erreur de requête, afficher un message d'erreur
-        echo '<tr><td colspan="6">Erreur de recherche</td></tr>';
+        echo '<tr><td colspan="3">Erreur de recherche</td></tr>';
     }
 
     // Libérer le résultat de la requête
     mysqli_free_result($result);
 } else {
-    // Requête SQL pour récupérer tous les joueurs si aucune recherche n'est effectuée
-    $query = "SELECT * FROM users";
+    // Définir les valeurs par défaut pour le filtre handicap
+    $handicapMin = isset($_POST['handicapMin']) ? $_POST['handicapMin'] : 0;
+    $handicapMax = isset($_POST['handicapMax']) ? $_POST['handicapMax'] : 54;
+
+    // Requête SQL pour récupérer les joueurs dans la fourchette de handicap spécifiée
+    $query = "SELECT * FROM users
+              WHERE index_golf >= $handicapMin AND index_golf <= $handicapMax";
+
     $result = mysqli_query($connection, $query);
 
     if ($result) {
@@ -57,22 +56,17 @@ if (isset($_POST['searchText'])) {
                 // Construire une ligne de tableau pour chaque joueur
                 echo '<tr>';
                 echo '<td><img src="./images/' . $row['avatar'] . '" alt="Avatar joueur"></td>';
-                
                 echo '<td>' . $row['prenom'] . '</td>';
-                
                 echo '<td>' . $row['index_golf'] . '</td>';
-                
-               
-               
                 echo '</tr>';
             }
         } else {
             // Si aucun résultat n'est trouvé, afficher un message approprié
-            echo '<tr><td colspan="6">Aucun joueur trouvé</td></tr>';
+            echo '<tr><td colspan="3">Aucun joueur trouvé dans la fourchette de handicap spécifiée</td></tr>';
         }
     } else {
         // En cas d'erreur de requête, afficher un message d'erreur
-        echo '<tr><td colspan="6">Erreur lors de la récupération des joueurs</td></tr>';
+        echo '<tr><td colspan="3">Erreur lors de la récupération des joueurs</td></tr>';
     }
 
     // Libérer le résultat de la requête

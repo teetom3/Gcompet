@@ -42,12 +42,27 @@ require './config/database.php';
             <div class="form-group">
               <label for="password">Mot de passe :</label>
               <input type="password" id="password" name="password" required>
+              
+            </div>
+            <div class="form-group">
+            <label for="email">Afficher le mot de passe</label>
+            <input type="checkbox" id="showPassword"> 
             </div>
             <button type="submit" name="submit">Connexion</button>
           </form>
           <p class="signup-text">Vous n'avez pas de compte ? <a href="signup.php">Cliquez ici</a> pour vous inscrire.</p>
         </div>
       </div>
-    
+    <script>
+      document.getElementById("showPassword").addEventListener("change", function() {
+    var passwordField = document.getElementById("password");
+    if (this.checked) {
+        passwordField.type = "text";
+    } else {
+        passwordField.type = "password";
+    }
+});
+
+      </script>
 </body>
 </html>

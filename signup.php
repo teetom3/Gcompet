@@ -89,6 +89,10 @@ unset($_SESSION['signup-data']);
               <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
+            <label for="email">Afficher le mot de passe</label>
+            <input type="checkbox" id="showPassword"> 
+            </div>
+            <div class="form-group">
               <label for="photo">Photo :</label>
               <input type="file" id="avatar" name="avatar" required>
             </div>
@@ -96,5 +100,17 @@ unset($_SESSION['signup-data']);
           </form>
         </div>
       </div>
+
+      <script>
+      document.getElementById("showPassword").addEventListener("change", function() {
+    var passwordField = document.getElementById("password");
+    if (this.checked) {
+        passwordField.type = "text";
+    } else {
+        passwordField.type = "password";
+    }
+});
+
+      </script>
 </body>
 </html>

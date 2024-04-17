@@ -8,6 +8,13 @@
     </div>
     <div class="search-bar">
       <input type="text" id="searchInput"  placeholder="Rechercher un joueur...">
+      <div class="filter-bar">
+    <label for="handicapRange">Filtrer par index</label>
+    <span>min</span><input type="range" id="handicapMin" name="handicapMin" min="0" max="54" value="0">
+    <span id="handicapMinValue">0</span>
+    <input type="range" id="handicapMax" name="handicapMax" min="0" max="54" value="54">
+    <span id="handicapMaxValue">54</span><span>max</span>
+</div>
     </div>
    
     <div class="table-container">
@@ -65,6 +72,41 @@ $(document).ready(function() {
         });
     });
 });
+// Événement onChange pour la barre de filtre handicap (minimum)
+$('#handicapMin').on('input', function() {
+    var min = parseInt($(this).val());
+    var max = parseInt($('#handicapMax').val());
+    $('#handicapMinValue').text(min);
+    filterPlayersByHandicap(min, max);
+});
+
+// Événement onChange pour la barre de filtre handicap (maximum)
+$('#handicapMax').on('input', function() {
+    var min = parseInt($('#handicapMin').val());
+    var max = parseInt($(this).val());
+    $('#handicapMaxValue').text(max);
+    filterPlayersByHandicap(min, max);
+});
+
+
+
+// Fonction pour filtrer les joueurs par handicap dans la fourchette spécifiée
+
+function filterPlayersByHandicap(min, max){
+$.ajax({
+        url: 'search-players.php', // URL de votre script PHP pour filtrer les joueurs par handicap
+        method: 'POST',
+        data: { handicapMin: min, handicapMax: max },
+        success: function(response) {
+            // Mettez à jour le contenu du tableau avec les joueurs filtrés
+            $('tbody').html(response);
+        },
+        error: function(xhr, status, error) {
+            console.error(status + ': ' + error);
+        }
+    });
+  }
+</script>
 
 </script>
 </div>

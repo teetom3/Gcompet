@@ -30,11 +30,8 @@ if (isset($_POST['searchText'])) {
                 echo '<td>';
                 // Bouton Modifier avec l'ID du joueur
                 echo '<a href="edit-utilisateur.php?id=' . $row['id'] . '" class="edit-button"><button class="edit-button">Modifier</button></a>';
-                // Bouton Supprimer avec l'ID du joueur
-                
                 echo '</td>';
                 echo '</tr>';
-                
             }
         } else {
             // Si aucun résultat n'est trouvé, afficher un message approprié
@@ -48,8 +45,14 @@ if (isset($_POST['searchText'])) {
     // Libérer le résultat de la requête
     mysqli_free_result($result);
 } else {
-    // Requête SQL pour récupérer tous les joueurs si aucune recherche n'est effectuée
-    $query = "SELECT * FROM users";
+    // Récupérer les valeurs du filtre handicap
+    $handicapMin = isset($_POST['handicapMin']) ? $_POST['handicapMin'] : 0;
+    $handicapMax = isset($_POST['handicapMax']) ? $_POST['handicapMax'] : 54;
+
+    // Requête SQL pour récupérer les joueurs dans la fourchette de handicap spécifiée
+    $query = "SELECT * FROM users
+              WHERE index_golf >= $handicapMin AND index_golf <= $handicapMax";
+
     $result = mysqli_query($connection, $query);
 
     if ($result) {
@@ -66,13 +69,12 @@ if (isset($_POST['searchText'])) {
                 echo '<td>';
                 // Bouton Modifier avec l'ID du joueur
                 echo '<a href="edit-utilisateur.php?id_utilisateur=' . $row['id'] . '" class="edit-button"><button class="edit-button">Modifier</button></a>';
-                
                 echo '</td>';
                 echo '</tr>';
             }
         } else {
             // Si aucun résultat n'est trouvé, afficher un message approprié
-            echo '<tr><td colspan="6">Aucun joueur trouvé</td></tr>';
+            echo '<tr><td colspan="6">Aucun joueur trouvé dans la fourchette de handicap spécifiée</td></tr>';
         }
     } else {
         // En cas d'erreur de requête, afficher un message d'erreur
